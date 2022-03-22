@@ -1,8 +1,8 @@
 import {RouterModule, Routes} from "@angular/router";
-import {OsobaStrankaComponent} from "./osoba-stranka/osoba-stranka.component";
-import {VypozickyStrankaComponent} from "./vypozicky-stranka/vypozicky-stranka.component"
+import {OsobaStrankaComponent} from "./osoba/osoba-stranka/osoba-stranka.component";
+import {VypozickyStrankaComponent} from "./vypozicky/vypozicky-stranka/vypozicky-stranka.component"
 import {NgModule} from "@angular/core";
-import {KnihaStrankaComponent} from "./kniha-stranka/kniha-stranka.component";
+import {SpravaStrankaComponent} from "./sprava/sprava-stranka/sprava-stranka.component";
 
 const routes: Routes = [
   {
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: OsobaStrankaComponent,
   },
   {
-    path: 'kniha',
-    component: KnihaStrankaComponent,
+    path: 'sprava',
+    component: SpravaStrankaComponent,
   },
   {
     path: 'vypozicka',

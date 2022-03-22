@@ -2,16 +2,16 @@ import {Router} from "@angular/router";
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 enum MENU{
-  OSOBY, KNIHY, VYPOZICKY
+  OSOBY, SPRAVY, VYPOZICKY,
 }
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  title = 'SigmaMales Frontend';
+  title = 'SigmaChat';
   Kus = 0;
   mnozstvo = 0;
   Vysledok=0;
@@ -24,8 +24,8 @@ export class AppComponent {
   zakaz = false;
   persons: any[] = [];
   osoba = {id:"", name:"", contact:""};
-  books: any[] = [];
-  kniha = {id:"",name:"", author:"", available:""};
+  messages: any[] = [];
+  sprava = {id:"",text:"", odosielatel:"", prijimatel:"", available:""};
   pozicka = {id:"",kniha:"", osoba:""};
   pozicky: any[] = [];
 
@@ -148,15 +148,15 @@ export class AppComponent {
       this.router.navigate(['/osoba']);
     }
     if (m == MENU.KNIHY) {
-      this.router.navigate(['/kniha']);
+      this.router.navigate(['/sprava']);
     }*/
 
   }
   public osoby(){
     this.aktMenu = MENU.OSOBY;
   }
-  public knihy(){
-    this.aktMenu = MENU.KNIHY;
+  public spravy(){
+    this.aktMenu = MENU.SPRAVY;
   }
   public vypozicky(){
     this.aktMenu = MENU.VYPOZICKY;
@@ -165,13 +165,13 @@ export class AppComponent {
     let o2 = {id: this.osoba.id, name: this.osoba.name, contact: this.osoba.contact}
     this.persons.push(o2);
   }
-  public pridajk(){
-    let k2 = {id: this.kniha.id, name: this.kniha.name, author: this.kniha.author, available: this.kniha.available}
-    this.books.push(k2);
+  public pridajs(){
+    let m2 = {id: this.sprava.id, text: this.sprava.text, odosielatel: this.sprava.odosielatel, prijimatel: this.sprava.prijimatel}
+    this.messages.push(m2);
   }
 
   public pridajVypozicku() {
-    let v2 = {id: this.pozicka.id, kniha: this.kniha, osoba: this.osoba}
+    let v2 = {id: this.pozicka.id, kniha: this.sprava, osoba: this.osoba}
     this.pozicky.push(v2);
   }
   otvorMenu(m: MENU) {
@@ -179,8 +179,8 @@ export class AppComponent {
     if (m == MENU.OSOBY) {
       this.router.navigate(['/osoba']);
     }
-    if (m == MENU.KNIHY) {
-      this.router.navigate(['/kniha']);
+    if (m == MENU.SPRAVY) {
+      this.router.navigate(['/sprava']);
     }
     if (m == MENU.VYPOZICKY) {
       this.router.navigate(['/vypozicka']);

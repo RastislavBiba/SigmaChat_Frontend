@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {Osoba} from '../models/osoba.model';
+import {Osoba} from '../../models/osoba.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 

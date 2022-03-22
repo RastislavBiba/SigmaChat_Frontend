@@ -1,0 +1,27 @@
+<h1>Spravy - zoznam</h1>
+
+<div *ngIf="!messages || messages?.length === 0">
+  Zoznam sprav je prázdny.
+</div>
+
+
+<table class="table" *ngIf="messages.length > 0">
+  <thead>
+  <tr>
+    <th>Odosielatel</th>
+    <th>Text spravy</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let messages of messages">
+    <td>{{ messages.odosielatel }}</td>
+    <td>{{ messages.text_spravy }}</td>
+    <td>
+      <button (click)="uprav(messages)">Upraviť</button>
+      <button (click)="zmaz(messages)">Zmazať</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

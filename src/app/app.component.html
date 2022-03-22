@@ -50,10 +50,10 @@
 
 <div *ngIf="aktMenu == menu.KNIHY">
   <br>
-  Id: <input [(ngModel)]="kniha.id"><br>
-  name: <input [(ngModel)]="kniha.name"> <br>
-  author: <input [(ngModel)]="kniha.author"> <br>
-  available: <input [(ngModel)]="kniha.available"> <br> <br>
+  Id: <input [(ngModel)]="sprava.id"><br>
+  name: <input [(ngModel)]="sprava.name"> <br>
+  author: <input [(ngModel)]="sprava.author"> <br>
+  available: <input [(ngModel)]="sprava.available"> <br> <br>
   <button class="but" style="align-content: center" (click)="pridajk();">Pridaj</button>
   <br><br>
   zoznam: <br>
@@ -65,13 +65,13 @@
 <div *ngIf="aktMenu == menu.VYPOZICKY">
   <br>
   id: <input [(ngModel)]="pozicka.id"><br>
-  book: <input [(ngModel)]="kniha"><br>
+  book: <input [(ngModel)]="sprava"><br>
   user: <input [(ngModel)]="osoba"><br> <br>
   <button class="but" (click)="pridajVypozicku();">Pridaj</button>
   <br> <br>
   zoznam: <br>
   <div *ngFor="let p of pozicky">
-    {{p.id}} | {{p.kniha}} | {{p.osoba}}
+    {{p.id}} | {{p.sprava}} | {{p.osoba}}
   </div>
   <br>
 </div>
@@ -80,12 +80,12 @@
   <h1 style="text-align: center"> Nazov: {{title}} </h1><br>
   <div class=" d-flex justify-content-center ">
     <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.OSOBY)">osoby</button>
-    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.KNIHY)">knihy</button>
+    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.SPRAVY)">spravy</button>
     <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.VYPOZICKY)">vypozicky</button>
   </div>
   <br>
   <br>
 </div>
 <div class="d-flex justify-content-center">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

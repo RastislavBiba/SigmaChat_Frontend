@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import{Vypozicka} from "../models/vypozicka.model";
+import{Vypozicka} from "../../models/vypozicka.model";
 import {FormControl, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-vypozicka-formular',

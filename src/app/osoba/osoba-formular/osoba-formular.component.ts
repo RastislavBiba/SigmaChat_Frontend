@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Osoba} from "../models/osoba.model";
+import {Osoba} from "../../models/osoba.model";
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({

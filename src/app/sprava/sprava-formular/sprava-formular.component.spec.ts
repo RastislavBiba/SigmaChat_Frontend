@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KnihaFormularComponent } from './kniha-formular.component';
+import { SpravaFormularComponent } from './sprava-formular.component';
 
-describe('KnihaFormularComponent', () => {
-  let component: KnihaFormularComponent;
-  let fixture: ComponentFixture<KnihaFormularComponent>;
+describe('SpravaFormularComponent', () => {
+  let component: SpravaFormularComponent;
+  let fixture: ComponentFixture<SpravaFormularComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ KnihaFormularComponent ]
+      declarations: [ SpravaFormularComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KnihaFormularComponent);
+    fixture = TestBed.createComponent(SpravaFormularComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

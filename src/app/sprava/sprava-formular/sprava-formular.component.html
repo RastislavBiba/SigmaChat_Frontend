@@ -1,0 +1,19 @@
+<h1>Správy - formular</h1>
+
+<form [formGroup]="formular">
+
+  <label>text spravy:
+    <input formControlName="text_spravy">
+  </label>
+  <br>
+
+  <label>Odosielateľ:
+    <input formControlName="odosielatel">
+  </label>
+  <br>
+
+  <button (click)="odosli()" *ngIf="formular.value.id === null">odoslať</button>
+  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
+  <button (click)="zrus()">zrus</button>
+
+</form>

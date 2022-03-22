@@ -2,12 +2,12 @@ import { Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Vypozicka} from "../models/vypozicka.model";
+import {Vypozicka} from "../../models/vypozicka.model";
 
 @Component({
   selector: 'app-vypozicky-stranka',
-  templateUrl: './vypozicky-stranka.component.html',
-  styleUrls: ['./vypozicky-stranka.component.css']
+  templateUrl: 'vypozicky-stranka.component.html',
+  styleUrls: ['vypozicky-stranka.component.css']
 })
 export class VypozickyStrankaComponent {
   vypozicky: Vypozicka[] = [];
