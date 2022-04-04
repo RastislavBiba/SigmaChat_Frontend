@@ -1,4 +1,3 @@
-<h1>Spravy - zoznam</h1>
 
 <div *ngIf="!messages || messages?.length === 0">
   Zoznam sprav je prázdny.
@@ -9,18 +8,20 @@
   <thead>
   <tr>
     <th>Odosielatel</th>
+    <th>Prijimatel</th>
     <th>Text spravy</th>
-    <th></th>
+
   </tr>
   </thead>
 
   <tbody>
-  <tr *ngFor="let messages of messages">
-    <td>{{ messages.odosielatel }}</td>
-    <td>{{ messages.text_spravy }}</td>
+  <tr *ngFor="let message of messages">
+    <td>{{ message.odosielatel }}</td>
+    <td>{{ message.prijimatel}}</td>
+    <td>{{ message.text_spravy }}</td>
     <td>
-      <button (click)="uprav(messages)">Upraviť</button>
-      <button (click)="zmaz(messages)">Zmazať</button>
+      <button (click)="uprav(message)">Upraviť</button>
+      <button (click)="zmaz(message)">Zmazať</button>
     </td>
   </tr>
   </tbody>

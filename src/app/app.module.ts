@@ -15,6 +15,10 @@ import {VypozickyZoznamComponent } from './vypozicky/vypozicky-zoznam/vypozicky-
 import {VypozickyStrankaComponent } from './vypozicky/vypozicky-stranka/vypozicky-stranka.component';
 import {MenuComponent} from "./menu/menu.component";
 import {HttpClientModule} from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import {HttpClientModule} from "@angular/common/http";
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,5 @@
+.okno{
+  display: inline-block;
+  width:  inherit;
+  border: 1px solid;
+}

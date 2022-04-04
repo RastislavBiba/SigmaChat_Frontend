@@ -1,19 +1,26 @@
+<div class="okno">
 <br>
-<h1 class=" d-flex justify-content-center "> Spravy </h1>
-<app-sprava-formular [sprava]="spravaNaUpravu"
-                    (pridajSpravu)="odosli($event)"
-                    (upravSpravu)="uprav($event)" >
-</app-sprava-formular>
+<div>
+  <button mat-icon-button (click)="chodSpat()">
+    <mat-icon>
+      home
+    </mat-icon>
+  </button>
+  Spravy
+</div>
+
 
 <app-sprava-zoznam [messages]="messages"
                   (upravSpravu)="upravZoZoznamu($event)"
                   (zmazSpravu)="zmazZoZoznamu($event)">
 </app-sprava-zoznam>
-
 <br>
-
-<div>
-  <button (click)="chodSpat()">SPÄŤ</button>
+<app-sprava-formular [sprava]="spravaNaUpravu"
+                     (pridajSpravu)="odosli($event)"
+                     (upravSpravu)="uprav($event)" >
+</app-sprava-formular>
+<br>
 </div>
+
 
 

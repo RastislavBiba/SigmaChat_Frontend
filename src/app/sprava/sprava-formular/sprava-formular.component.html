@@ -2,18 +2,19 @@
 
 <form [formGroup]="formular">
 
-  <label>text spravy:
-    <input formControlName="text_spravy">
-  </label>
   <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Prijimatel:</mat-label>
+    <input matInput formControlName="prijimatel" placeholder="Zadaj prijemcu...">
+  </mat-form-field>
 
-  <label>Odosielateľ:
-    <input formControlName="odosielatel">
-  </label>
-  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Text:</mat-label>
+    <input matInput formControlName="text_spravy" placeholder="Napiste spravu...">
+  </mat-form-field>
 
-  <button (click)="odosli()" *ngIf="formular.value.id === null">odoslať</button>
-  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
-  <button (click)="zrus()">zrus</button>
+  <button (click)="odosli()" *ngIf="formular.value.id === null"> <mat-icon> send</mat-icon> </button>
+  <button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-icon>edit</mat-icon> </button>
+  <button (click)="zrus()"> <mat-icon>cancel</mat-icon> </button>
 
 </form>
