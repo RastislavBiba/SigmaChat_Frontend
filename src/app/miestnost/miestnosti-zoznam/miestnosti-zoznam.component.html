@@ -1,0 +1,26 @@
+<h1>Miestnosti - zoznam</h1>
+
+<div *ngIf="!miestnosti || miestnosti?.length === 0">
+  Zoznam vypoziciek je prázdny.
+</div>
+
+<table class="table" *ngIf="miestnosti.length > 0">
+  <thead>
+  <tr>
+    <th>Meno</th>
+
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let miestnost of miestnosti">
+    <td>{{ miestnost.meno }}</td>
+
+    <td>
+      <button (click)="uprav(miestnost)">Upraviť</button>
+      <button (click)="zmaz(miestnost)">Zmazať</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

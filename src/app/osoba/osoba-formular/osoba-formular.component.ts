@@ -25,21 +25,18 @@ export class OsobaFormularComponent {
   constructor() {
     this.formular = new FormGroup({
       id: new FormControl(null),
-      meno: new FormControl(null),
-      priezvisko: new FormControl(null)
+      login: new FormControl(null),
     });
   }
   public pridaj(): void {
-    this.pridajOsobu.emit({id: Math.random().toString(),meno: this.formular.value.meno, priezvisko: this.formular.value.priezvisko});
-    //this.osoba.meno="";
-    //this.osoba.priezvisko="";
+    this.pridajOsobu.emit({id: Math.random().toString(),login: this.formular.value.login});
+    //this.osoba.login="";
     this.formular.reset();
   }
 
   public uprav(): void {
     this.upravOsobu.emit(this.formular.value);
     //this.osoba.meno="";
-    //this.osoba.priezvisko="";
     this.formular.reset();
   }
 
@@ -62,8 +59,7 @@ export class OsobaFormularComponent {
      */
     // @ts-ignore
     this.formular.controls['id'].setValue(osoba.id);
-    this.formular.controls['meno'].setValue(osoba.meno);
-    this.formular.controls['priezvisko'].setValue(osoba.priezvisko);
+    this.formular.controls['login'].setValue(osoba.login);
   }
 
 }

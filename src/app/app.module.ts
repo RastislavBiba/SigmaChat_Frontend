@@ -10,9 +10,9 @@ import {AppRoutingModule } from './app-routing.module';
 import {SpravaZoznamComponent} from "./sprava/sprava-zoznam/sprava-zoznam.component";
 import {SpravaFormularComponent } from './sprava/sprava-formular/sprava-formular.component';
 import {SpravaStrankaComponent} from "./sprava/sprava-stranka/sprava-stranka.component";
-import {VypozickaFormularComponent } from './vypozicky/vypozicka-formular/vypozicka-formular.component';
-import {VypozickyZoznamComponent } from './vypozicky/vypozicky-zoznam/vypozicky-zoznam.component';
-import {VypozickyStrankaComponent } from './vypozicky/vypozicky-stranka/vypozicky-stranka.component';
+import {MiestnostiFormularComponent } from './miestnost/miestnosti-formular/miestnosti-formular.component';
+import {MiestnostiZoznamComponent } from './miestnost/miestnosti-zoznam/miestnosti-zoznam.component';
+import {MiestnostiStrankaComponent } from './miestnost/miestnosti-stranka/miestnosti-stranka.component';
 import {MenuComponent} from "./menu/menu.component";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,9 +28,9 @@ import {MatButtonModule} from "@angular/material/button";
     OsobaStrankaComponent,
     SpravaFormularComponent,
     SpravaStrankaComponent,
-    VypozickaFormularComponent,
-    VypozickyZoznamComponent,
-    VypozickyStrankaComponent,
+    MiestnostiFormularComponent,
+    MiestnostiZoznamComponent,
+    MiestnostiStrankaComponent,
     SpravaZoznamComponent,
     MenuComponent
   ],

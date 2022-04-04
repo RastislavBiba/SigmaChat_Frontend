@@ -2,14 +2,11 @@
 
 <form [formGroup]="formular">
 
-  <label>Meno:
-    <input formControlName="meno">
+  <label>login:
+    <input formControlName="login">
   </label>
   <br>
 
-  <label>Priezvisko:
-    <input formControlName="priezvisko">
-  </label>
   <br>
 
   <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>

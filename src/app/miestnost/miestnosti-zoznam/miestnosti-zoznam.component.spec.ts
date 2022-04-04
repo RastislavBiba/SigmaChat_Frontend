@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VypozickaFormularComponent } from './vypozicka-formular.component';
+import { MiestnostiZoznamComponent } from './miestnosti-zoznam.component';
 
-describe('VypozickaFormularComponent', () => {
-  let component: VypozickaFormularComponent;
-  let fixture: ComponentFixture<VypozickaFormularComponent>;
+describe('VypozickyZoznamComponent', () => {
+  let component: MiestnostiZoznamComponent;
+  let fixture: ComponentFixture<MiestnostiZoznamComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VypozickaFormularComponent ]
+      declarations: [ MiestnostiZoznamComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VypozickaFormularComponent);
+    fixture = TestBed.createComponent(MiestnostiZoznamComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
