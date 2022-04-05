@@ -29,14 +29,15 @@ export class SpravaFormularComponent {
     this.formular = new FormGroup({
       id: new FormControl(null),
       text_spravy: new FormControl(null),
-      odosielatel: new FormControl(null),
+      odosielatel: new FormControl("Rasto"),
       prijimatel: new FormControl(null)
     });
   }
   public odosli(): void {
-
-    this.pridajSpravu.emit({id: Math.random().toString(),text_spravy: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel});
+    console.log("1");
+    this.pridajSpravu.emit({id: Math.random().toString(),text: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel});
     this.formular.reset();
+
   }
 
   public uprav(): void {
@@ -49,7 +50,7 @@ export class SpravaFormularComponent {
   private naplnForm(sprava: Sprava): void {
 
     this.formular.controls['id'].setValue(sprava.id);
-    this.formular.controls['text_spravy'].setValue(sprava.text_spravy);
+    this.formular.controls['text_spravy'].setValue(sprava.text);
     this.formular.controls['odosielatel'].setValue(sprava.odosielatel);
     this.formular.controls['prijimatel'].setValue(sprava.prijimatel);
   }

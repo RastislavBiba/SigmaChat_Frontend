@@ -18,7 +18,7 @@
   <tr *ngFor="let message of messages">
     <td>{{ message.odosielatel }}</td>
     <td>{{ message.prijimatel}}</td>
-    <td>{{ message.text_spravy }}</td>
+    <td>{{ message.text }}</td>
     <td>
       <button (click)="uprav(message)">Upraviť</button>
       <button (click)="zmaz(message)">Zmazať</button>

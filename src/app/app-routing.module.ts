@@ -14,7 +14,7 @@ const routes: Routes = [
     component: SpravaStrankaComponent,
   },
   {
-    path: 'vypozicka',
+    path: 'miestnost',
     component: MiestnostiStrankaComponent,
   }
 ]

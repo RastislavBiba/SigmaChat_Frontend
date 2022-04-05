@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Miestnost} from "../../models/miestnost.model";
 
-
 @Component({
   selector: 'app-miestnost-zoznam',
   templateUrl: './miestnosti-zoznam.component.html',

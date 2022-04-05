@@ -10,9 +10,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class MiestnostiFormularComponent {
 
   @Output()
-  pridajVypozicku = new EventEmitter<Miestnost>();
+  pridajMiestnost = new EventEmitter<Miestnost>();
   @Output()
-  upravVypozicku = new EventEmitter<Miestnost>();
+  upravMiestnost = new EventEmitter<Miestnost>();
 
   @Input()
   set miestnosti(m: Miestnost | undefined){
@@ -29,7 +29,7 @@ export class MiestnostiFormularComponent {
     });
   }
   public pridaj(): void {
-    this.pridajVypozicku.emit({
+    this.pridajMiestnost.emit({
       id: Math.random().toString(),
       meno: this.formular.value.meno
       });
@@ -37,7 +37,7 @@ export class MiestnostiFormularComponent {
   }
 
   public uprav(): void {
-    this.upravVypozicku.emit(this.formular.value);
+    this.upravMiestnost.emit(this.formular.value);
     this.formular.reset();
   }
 

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Sprava} from "../../models/sprava.model";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {MessageServiceService} from "../../../sprava-service.service";
 
 @Component({
   selector: 'app-sprava-stranka',
@@ -15,20 +16,32 @@ export class SpravaStrankaComponent implements OnInit{
 
   spravaNaUpravu?: Sprava;
 
-  constructor(private router: Router, private http: HttpClient){}
+  private subscription: Subscription = new Subscription();
+  constructor(private router: Router, private http: HttpClient, private messageService: MessageServiceService){}
 
-  ngOnInit(): void{
-    console.log('1');
-    const vysledok: Observable<Sprava[]> = this.http.get<Sprava[]>('http://localhost:8080/api/messages');
-    vysledok.subscribe(data => {
-    console.log('prislo:' + data);
-    });
-    console.log('2');
-    }
-    odosli(sprava: Sprava): void {
-    this.messages.push(sprava);
-
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
+
+  ngOnInit(): void {
+    this.refreshMessages();
+  }
+
+  refreshMessages(): void {
+    this.subscription.add(this.messageService.getMessages().subscribe(data => {
+      console.log('Prislo:',data);
+      this.messages=data;
+    }));
+  }
+
+
+    odosli(sprava: Sprava): void {
+    console.log("2");
+      this.messageService.createMessage(sprava).subscribe(data=> {
+        console.log('prislo:' + data);
+      });
+
+    }
 
   chodSpat(): void {
     this.router.navigate(['']);

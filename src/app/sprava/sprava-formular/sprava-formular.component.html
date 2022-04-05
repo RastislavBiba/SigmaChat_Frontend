@@ -1,7 +1,6 @@
 <h1>Správy - formular</h1>
 
 <form [formGroup]="formular">
-
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Prijimatel:</mat-label>
@@ -10,7 +9,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Text:</mat-label>
-    <input matInput formControlName="text_spravy" placeholder="Napiste spravu...">
+    <input matInput formControlName="text_spravy" placeholder="Napiste text...">
   </mat-form-field>
 
   <button (click)="odosli()" *ngIf="formular.value.id === null"> <mat-icon> send</mat-icon> </button>

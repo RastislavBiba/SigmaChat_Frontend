@@ -2,7 +2,7 @@ import {Router} from "@angular/router";
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 enum MENU{
-  OSOBY, SPRAVY, VYPOZICKY,
+  OSOBY, SPRAVY, MIESTNOSTI,
 }
 
 @Component({
@@ -158,8 +158,8 @@ export class AppComponent {
   public spravy(){
     this.aktMenu = MENU.SPRAVY;
   }
-  public vypozicky(){
-    this.aktMenu = MENU.VYPOZICKY;
+  public miestnosti(){
+    this.aktMenu = MENU.MIESTNOSTI;
   }
   public pridaj(){
     let o2 = {id: this.osoba.id, name: this.osoba.name, contact: this.osoba.contact}
@@ -170,7 +170,7 @@ export class AppComponent {
     this.messages.push(m2);
   }
 
-  public pridajVypozicku() {
+  public pridajMirstnost() {
     let v2 = {id: this.pozicka.id, kniha: this.sprava, osoba: this.osoba}
     this.pozicky.push(v2);
   }
@@ -182,8 +182,8 @@ export class AppComponent {
     if (m == MENU.SPRAVY) {
       this.router.navigate(['/sprava']);
     }
-    if (m == MENU.VYPOZICKY) {
-      this.router.navigate(['/vypozicka']);
+    if (m == MENU.MIESTNOSTI) {
+      this.router.navigate(['/miestnost']);
     }
   }
 }
