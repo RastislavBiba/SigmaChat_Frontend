@@ -32,6 +32,7 @@ export class MessageServiceService {
   }
 
   deleteMessage(messageId: number): Observable<void> {
+    console.log('sprava-service.ts');
     return this.http.delete<void>( `${this.apiUrl}/${messageId}`);
   }
 

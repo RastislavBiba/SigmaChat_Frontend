@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Sprava} from "../../models/sprava.model";
-import {HttpClient} from "@angular/common/http";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {MessageServiceService} from "../../../sprava-service.service";
@@ -10,14 +9,14 @@ import {MessageServiceService} from "../../../sprava-service.service";
   templateUrl: 'sprava-stranka.component.html',
   styleUrls: ['sprava-stranka.component.css']
 })
-export class SpravaStrankaComponent implements OnInit{
+export class SpravaStrankaComponent implements OnInit, OnDestroy{
 
   messages: Sprava[] = [];
   spravaNaUpravu?: Sprava;
 
   private subscription: Subscription = new Subscription();
 
-  constructor(private router: Router, private http: HttpClient, private messageService: MessageServiceService){}
+  constructor(private router: Router, private messageService: MessageServiceService){}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -48,23 +47,26 @@ export class SpravaStrankaComponent implements OnInit{
   }
 
   uprav(sprava: Sprava):void{
-    const index = this.messages.findIndex(spravaZPola => spravaZPola.id === sprava.id);
-    if (index !== -1) {
-      this.messages[index] = sprava;
+    console.log('idem upravovat');
+    if(sprava.id!==undefined) {
+      this.messageService.updateMessage(sprava.id, sprava).subscribe(data => {
+        console.log('upravilo:' + data);
+      });
     }
   }
 
   upravZoZoznamu(messageId: number): void{
-    this.subscription.add(this.messageService.getMessage(messageId).subscribe(data => {
+    this.messageService.getMessage(messageId).subscribe(data => {
       console.log('prislo: ' , data);
-      this.spravaNaUpravu;
-    }));
+    });
   }
 
   zmazZoZoznamu(messageId: number): void {
-    console.log('Zamazal som:')
+    console.log('sprava-stranka.component.ts');
     this.subscription.add(this.messageService.deleteMessage(messageId).subscribe(data => {
       this.refreshMessages();
+      console.log('odstranil som:' + data);
     }));
   }
+
 }

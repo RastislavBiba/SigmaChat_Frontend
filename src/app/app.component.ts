@@ -128,29 +128,11 @@ export class AppComponent {
       mnozstvo: new FormControl(),
     });
   }
-  //public pocitaj(){
-  //  this.Vysledok = this.Kus * this.mnozstvo;
- // }
- // public pracuj(): void{
- //   alert("test");
- // }
-  //public ukazTo(): void{
-  //  alert("Hura");
-  //}
   public test(){
     this.zakaz = !this.zakaz;
   }
   public nastavMenu(m: MENU){
     this.aktMenu = m;
-
-    // preroutuj do komponenty podla menu
-    /*if (m == MENU.OSOBY) {
-      this.router.navigate(['/osoba']);
-    }
-    if (m == MENU.KNIHY) {
-      this.router.navigate(['/sprava']);
-    }*/
-
   }
   public osoby(){
     this.aktMenu = MENU.OSOBY;
@@ -170,7 +152,7 @@ export class AppComponent {
     this.messages.push(m2);
   }
 
-  public pridajMirstnost() {
+  public pridajMiestnost() {
     let v2 = {id: this.pozicka.id, kniha: this.sprava, osoba: this.osoba}
     this.pozicky.push(v2);
   }

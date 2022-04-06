@@ -10,21 +10,21 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class SpravaFormularComponent {
 
-
-  @Output()
-  pridajSpravu = new EventEmitter<Sprava>();
-  @Output()
-  upravSpravu = new EventEmitter<Sprava>();
-
-  @Output()
-  odstranSpravu = new EventEmitter<Sprava>();
-
   @Input()
   set sprava(s: Sprava | undefined) {
     if (s) {
       this.naplnForm(s)
     }
   }
+
+  @Output()
+  pridajSpravu = new EventEmitter<Sprava>();
+
+  @Output()
+  upravSpravu = new EventEmitter<Sprava>();
+
+  @Output()
+  odstranSpravu = new EventEmitter<Sprava>();
 
   formular:FormGroup;
 
