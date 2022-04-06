@@ -1,10 +1,4 @@
-import {Router} from "@angular/router";
-import {Component, Input} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {Sprava} from "./models/sprava.model";
-enum MENU{
-  OSOBY, SPRAVY, MIESTNOSTI,
-}
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',

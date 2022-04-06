@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
-import {OsobyZoznamComponent} from "../osoba/osoby-zoznam/osoby-zoznam.component";
-import {MessageServiceService} from "../../sprava-service.service";
+
 
 enum MENU { OSOBY, SPRAVY, MIESTNOSTI }
 
@@ -12,7 +11,7 @@ enum MENU { OSOBY, SPRAVY, MIESTNOSTI }
 })
 export class MenuComponent{
   menu = MENU;
-  constructor(private router: Router, private messageServiceService: MessageServiceService) { }
+  constructor(private router: Router) { }
 
   otvorMenu(m: MENU) {
     if (m === MENU.OSOBY) {
