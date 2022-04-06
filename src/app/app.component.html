@@ -77,14 +77,5 @@
 </div>
 -->
 
-  <h1 style="text-align: center"> Nazov: {{title}} </h1><br>
-  <div class=" d-flex justify-content-center ">
-    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.OSOBY)">osoby</button>
-    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.SPRAVY)">spravy</button>
-    <button type="button" class="cold-grid btn btn-outline-dark col-1" (click)="otvorMenu(menu.MIESTNOSTI)">miestnosti</button>
-  </div>
-  <br>
-  <br>
-<div class="d-flex justify-content-center">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
+

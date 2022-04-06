@@ -3,6 +3,7 @@ import {OsobaStrankaComponent} from "./osoba/osoba-stranka/osoba-stranka.compone
 import {MiestnostiStrankaComponent} from "./miestnost/miestnosti-stranka/miestnosti-stranka.component"
 import {NgModule} from "@angular/core";
 import {SpravaStrankaComponent} from "./sprava/sprava-stranka/sprava-stranka.component";
+import {MenuComponent} from "./menu/menu.component";
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
   {
     path: 'miestnost',
     component: MiestnostiStrankaComponent,
-  }
+  },
+  {
+    path: '',
+    component: MenuComponent
+  },
 ]
 
 @NgModule({

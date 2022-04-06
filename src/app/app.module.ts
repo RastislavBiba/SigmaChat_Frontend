@@ -20,6 +20,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import {MatInputModule} from "@angular/material/input";
         MatIconModule,
         MatFormFieldModule,
         MatButtonModule,
-        MatInputModule
+        MatInputModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatSidenavModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,10 @@
+<mat-toolbar>
+  <span> SigmaChat </span>
+</mat-toolbar>
+<div mat-tab-nav-bar>
+  <a mat-tab-link (click)="otvorMenu(menu.OSOBY)"> Osoby </a>
+  <a mat-tab-link (click)="otvorMenu(menu.SPRAVY)"> Spravy </a>
+  <a mat-tab-link (click)="otvorMenu(menu.MIESTNOSTI)"> Miestnosti </a>
+</div>
 
 
-<button (click)="otvorMenu(menu.OSOBY)">osoby</button>
-<button (click)="otvorMenu(menu.SPRAVY)">knihy</button>
-<button (click)="otvorMenu(menu.MIESTNOSTI)">miestnosti</button>
