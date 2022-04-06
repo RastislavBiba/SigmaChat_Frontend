@@ -1,5 +1,5 @@
 export class Osoba {
-  id?: string;
+  id: number;
   login: string;
 //
   miestnosti?: string;

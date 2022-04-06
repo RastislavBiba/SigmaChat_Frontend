@@ -12,8 +12,8 @@
     <input matInput formControlName="text_spravy" placeholder="Napiste text...">
   </mat-form-field>
 
-  <button (click)="odosli()" *ngIf="formular.value.id === null"> <mat-icon> send</mat-icon> </button>
-  <button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-icon>edit</mat-icon> </button>
-  <button (click)="zrus()"> <mat-icon>cancel</mat-icon> </button>
+  <button mat-icon-button (click)="odosli()" *ngIf="formular.value.id === null"> <mat-icon> send</mat-icon> </button>
+  <button mat-icon-button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-icon>edit</mat-icon> </button>
+  <button mat-icon-button (click)="zrus()"> <mat-icon>cancel</mat-icon> </button>
 
 </form>

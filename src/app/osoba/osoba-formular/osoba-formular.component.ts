@@ -29,7 +29,7 @@ export class OsobaFormularComponent {
     });
   }
   public pridaj(): void {
-    this.pridajOsobu.emit({id: Math.random().toString(),login: this.formular.value.login});
+    this.pridajOsobu.emit({id: Math.random(),login: this.formular.value.login});
     //this.osoba.login="";
     this.formular.reset();
   }

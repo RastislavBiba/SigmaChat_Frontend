@@ -20,8 +20,8 @@
     <td>{{ message.prijimatel}}</td>
     <td>{{ message.text }}</td>
     <td>
-      <button (click)="uprav(message)">Upraviť</button>
-      <button (click)="zmaz(message)">Zmazať</button>
+      <button (click)="uprav(message.id)">Upraviť</button>
+      <button (click)="zmaz(message.id)">Zmazať</button>
     </td>
   </tr>
   </tbody>

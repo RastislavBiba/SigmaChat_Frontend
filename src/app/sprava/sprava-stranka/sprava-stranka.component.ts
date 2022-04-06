@@ -13,10 +13,10 @@ import {MessageServiceService} from "../../../sprava-service.service";
 export class SpravaStrankaComponent implements OnInit{
 
   messages: Sprava[] = [];
-
   spravaNaUpravu?: Sprava;
 
   private subscription: Subscription = new Subscription();
+
   constructor(private router: Router, private http: HttpClient, private messageService: MessageServiceService){}
 
   ngOnDestroy() {
@@ -54,15 +54,17 @@ export class SpravaStrankaComponent implements OnInit{
     }
   }
 
-  upravZoZoznamu(sprava: Sprava):void{
-    this.spravaNaUpravu = sprava;
+  upravZoZoznamu(messageId: number): void{
+    this.subscription.add(this.messageService.getMessage(messageId).subscribe(data => {
+      console.log('prislo: ' , data);
+      this.spravaNaUpravu;
+    }));
   }
 
-  zmazZoZoznamu(sprava: Sprava): void {
-    const index = this.messages.findIndex(spravaArray => spravaArray.id === sprava.id);
-    if (index !== -1) {
-      this.messages.splice(index, 1);
-    }
+  zmazZoZoznamu(messageId: number): void {
+    console.log('Zamazal som:')
+    this.subscription.add(this.messageService.deleteMessage(messageId).subscribe(data => {
+      this.refreshMessages();
+    }));
   }
-
 }

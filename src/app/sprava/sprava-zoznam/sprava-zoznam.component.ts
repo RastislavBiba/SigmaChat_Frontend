@@ -12,16 +12,16 @@ export class SpravaZoznamComponent {
   messages: Sprava[] = []
 
   @Output()
-  upravSpravu: EventEmitter<Sprava> = new EventEmitter<Sprava>();
+  upravSpravu: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  zmazSpravu: EventEmitter<Sprava> = new EventEmitter<Sprava>();
+  zmazSpravu: EventEmitter<number> = new EventEmitter<number>();
 
 
-  uprav(sprava: Sprava):void {
-    this.upravSpravu.emit(sprava);
+  uprav(messageId: number):void {
+    this.upravSpravu.emit(messageId);
   }
- zmaz(sprava: Sprava): void {
-    this.zmazSpravu.emit(sprava);
+ zmaz(messageId: number): void {
+    this.zmazSpravu.emit(messageId);
  }
 }
