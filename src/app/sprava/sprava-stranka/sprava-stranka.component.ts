@@ -69,4 +69,5 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
     }));
   }
 
+
 }

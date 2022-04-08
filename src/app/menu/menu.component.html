@@ -1,10 +1,15 @@
 <mat-toolbar>
+  <button mat-icon-button (click)="chodSpat()">
+    <mat-icon>
+      home
+    </mat-icon>
+  </button>
   <span> SigmaChat </span>
 </mat-toolbar>
 <div mat-tab-nav-bar>
-  <a mat-tab-link (click)="otvorMenu(menu.OSOBY)"> Osoby </a>
-  <a mat-tab-link (click)="otvorMenu(menu.SPRAVY)"> Spravy </a>
-  <a mat-tab-link (click)="otvorMenu(menu.MIESTNOSTI)"> Miestnosti </a>
+  <a mat-tab-link (click)="otvorMenu(menu.SPRAVY)"> <mat-icon>message</mat-icon></a>
+  <a mat-tab-link (click)="otvorMenu(menu.OSOBY)"> <mat-icon>people</mat-icon> </a>
+  <a mat-tab-link (click)="otvorMenu(menu.MIESTNOSTI)"> <mat-icon>add group</mat-icon> </a>
 </div>
 
 

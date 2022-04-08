@@ -33,16 +33,16 @@ export class SpravaFormularComponent {
       id: new FormControl(null),
       text_spravy: new FormControl(null),
       odosielatel: new FormControl("Rasto"),
-      prijimatel: new FormControl(null)
+      prijimatel: new FormControl(null),
+      id_miestnost: new FormControl(null)
     });
   }
   public odosli(): void {
     console.log("1");
-    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel});
+    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel, id_miestnost: this.formular.value.id_miestnost});
     this.formular.reset();
 
   }
-
   public uprav(): void {
     this.upravSpravu.emit(this.formular.value);
     this.formular.reset();

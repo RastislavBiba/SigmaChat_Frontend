@@ -24,5 +24,8 @@ export class MenuComponent{
       this.router.navigate(['/miestnost']);
     }
   }
+  chodSpat(): void {
+    this.router.navigate(['/sprava']);
+  }
 
 }

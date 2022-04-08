@@ -20,7 +20,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: MenuComponent
+    component: SpravaStrankaComponent,
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
   },
 ]
 

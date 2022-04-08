@@ -1,4 +1,5 @@
-.okno{
-  display: inline-block;
-  border: 1px solid;
+.text_input{
+  position: absolute;
+  width: 65%;
+  bottom: 10%;
 }

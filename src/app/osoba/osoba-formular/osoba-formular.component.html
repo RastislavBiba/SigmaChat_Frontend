@@ -1,16 +1,14 @@
-<h1>Osoby - formular</h1>
-
+<h1>Pridat Osobu</h1>
 <form [formGroup]="formular">
-
-  <label>login:
-    <input formControlName="login">
-  </label>
   <br>
+  <mat-form-field>
+    <mat-label>
+      Login:
+    </mat-label>
+    <input matInput formControlName="login" placeholder="Vlozte login...">
+  </mat-form-field>
 
-  <br>
-
-  <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
-  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
-  <button (click)="zrus()">zrus</button>
+  <button mat-icon-button (click)="pridaj()" *ngIf="formular.value.id === null"> <mat-icon>add</mat-icon> </button>
+ <!-- <button mat-icon-button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-></mat-> </button> -->
 
 </form>

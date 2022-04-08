@@ -1,26 +1,27 @@
-<div class="container-xxl okno">
+<app-menu>
+</app-menu>
 <br>
-<div>
-  <button mat-icon-button (click)="chodSpat()">
-    <mat-icon>
-      home
-    </mat-icon>
-  </button>
-  Spravy
+<div class="container-xxl h-75">
+<div class="row h-100">
+  <div class="col">
+  <app-miestnost-zoznam>
+
+  </app-miestnost-zoznam>
 </div>
-
-
+<div class="col-9">
 <app-sprava-zoznam [messages]="messages"
                   (upravSpravu)="upravZoZoznamu($event)"
                   (zmazSpravu)="zmazZoZoznamu($event)">
 </app-sprava-zoznam>
 <br>
-<app-sprava-formular [sprava]="spravaNaUpravu"
+  <div class="text_input">
+    <app-sprava-formular [sprava]="spravaNaUpravu"
                      (pridajSpravu)="odosli($event)"
                      (upravSpravu)="uprav($event)" >
-</app-sprava-formular>
+    </app-sprava-formular>
+  </div>
 <br>
 </div>
-
-
+</div>
+</div>
 

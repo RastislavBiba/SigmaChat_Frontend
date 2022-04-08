@@ -1,13 +1,11 @@
-<h1>Správy - formular</h1>
-
 <form [formGroup]="formular">
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Prijimatel:</mat-label>
     <input matInput formControlName="prijimatel" placeholder="Zadaj prijemcu...">
   </mat-form-field>
-
-  <mat-form-field appearance="fill">
+  <br>
+  <mat-form-field class="text" appearance="fill">
     <mat-label>Text:</mat-label>
     <input matInput formControlName="text_spravy" placeholder="Napiste text...">
   </mat-form-field>
