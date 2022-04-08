@@ -3,3 +3,6 @@
   width: 65%;
   bottom: 10%;
 }
+.main{
+  overflow: scroll;
+}
