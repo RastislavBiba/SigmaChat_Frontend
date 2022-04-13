@@ -38,7 +38,7 @@ export class SpravaFormularComponent {
     });
   }
   public odosli(): void {
-    console.log("1");
+    console.log("Odosielam");
     this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel, id_miestnost: this.formular.value.id_miestnost});
     this.formular.reset();
 

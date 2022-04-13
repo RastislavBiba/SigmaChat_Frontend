@@ -1,6 +1,8 @@
-<app-menu>
-</app-menu>
-<br>
+<header>
+  <app-menu>
+  </app-menu>
+</header>
+
 <div class="container-xxl h-75">
 <div class="row h-100">
   <div class="col">
@@ -8,7 +10,7 @@
 
   </app-miestnost-zoznam>
 </div>
-<div class="col-9">
+<main class="col-9 overflow-auto h-75">
 <app-sprava-zoznam [messages]="messages"
                   (upravSpravu)="upravZoZoznamu($event)"
                   (zmazSpravu)="zmazZoZoznamu($event)">
@@ -21,7 +23,7 @@
     </app-sprava-formular>
   </div>
 <br>
-</div>
+</main>
 </div>
 </div>
 

@@ -15,24 +15,21 @@ export class CustomerServiceService {
   getCustomers(): Observable<Osoba[]> {
     return this.http.get<Osoba[]>( `${this.apiUrl}`);
   }
-  getBooks(): Observable<Osoba[]> {
-    return this.http.get<Osoba[]>( `${this.apiUrl}`);
+
+  getCustomer(customerId: number): Observable<Osoba> {
+    return this.http.get<Osoba>( `${this.apiUrl}/${customerId}`);
   }
 
-  getMessage(messageId: number): Observable<Osoba> {
-    return this.http.get<Osoba>( `${this.apiUrl}/${messageId}`);
+  createCustomer(osoba: Osoba): Observable<Osoba> {
+    return this.http.post<Osoba>(`${this.apiUrl}`, osoba);
   }
 
-  createMessage(sprava: Osoba): Observable<Osoba> {
-    return this.http.post<Osoba>(`${this.apiUrl}`, sprava);
+  updateCustomer(customerId: number, customer: Osoba): Observable<Osoba> {
+    return this.http.put<Osoba>( `${this.apiUrl}/${customerId}`, customer);
   }
 
-  updateMessage(messageId: number, sprava: Osoba): Observable<Osoba> {
-    return this.http.put<Osoba>( `${this.apiUrl}/${messageId}`, sprava);
-  }
-
-  deleteMessage(messageId: number): Observable<void> {
-    return this.http.delete<void>( `${this.apiUrl}/${messageId}`);
+  deleteCustomer(customerId: number): Observable<void> {
+    return this.http.delete<void>( `${this.apiUrl}/${customerId}`);
   }
 
 }

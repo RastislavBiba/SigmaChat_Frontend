@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Subscription} from "rxjs";
 import {Miestnost} from "../../models/miestnost.model";
+import {RoomServiceService} from "../../../miestnost-service.service";
 
 @Component({
   selector: 'app-miestnost-stranka',
@@ -11,18 +11,26 @@ import {Miestnost} from "../../models/miestnost.model";
 })
 export class MiestnostiStrankaComponent {
   miestnosti: Miestnost[] = [];
-
   miestnostNaUpravu?: Miestnost;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  private subscription: Subscription = new Subscription();
+
+  constructor(private router: Router, private roomService: RoomServiceService) {
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {
-    console.log('1');
-    const vysledok: Observable<Miestnost[]> = this.http.get<Miestnost[]>('http://localhost:8080/api/customers');
-    vysledok.subscribe(data => {
-      console.log('prislo:' + data);
-    });
-    console.log('2');
+    this.refreshRooms();
+  }
+
+  refreshRooms(): void {
+    this.subscription.add(this.roomService.getRooms().subscribe(data => {
+      console.log('Prislo:', data);
+      this.miestnosti = data;
+    }));
   }
 
   chodSpat(): void {
@@ -30,23 +38,31 @@ export class MiestnostiStrankaComponent {
   }
 
   pridaj(miestnost: Miestnost): void {
-    this.miestnosti.push(miestnost);
+    console.log("2");
+    this.roomService.createRoom(miestnost).subscribe(data=> {
+      console.log('prislo:' + data);
+    });
   }
 
   uprav(miestnost: Miestnost): void {
-    const index = this.miestnosti.findIndex(miestnostArray => miestnostArray.id === miestnost.id);
-    if (index !== -1) {
-      this.miestnosti[index] = miestnost;
+    if (miestnost.id !== undefined) {
+      this.roomService.updateRoom(miestnost.id, miestnost).subscribe(data => {
+        console.log('upravilo:' + data);
+      });
     }
-  }
-  upravZoZoznamu(miestnost: Miestnost): void {
-    this.miestnostNaUpravu = miestnost;
   }
 
-  zmazZoZoznamu(miestnost: Miestnost): void {
-    const index = this.miestnosti.findIndex(miestnostArray => miestnostArray.id === miestnost.id);
-    if (index !== -1) {
-      this.miestnosti.splice(index, 1);
-    }
+  upravZoZoznamu(miestnostId: number): void {
+    this.roomService.getRoom(miestnostId).subscribe(data => {
+      console.log('prislo: ', data);
+    });
+  }
+
+  zmazZoZoznamu(miestnostId: number): void {
+    console.log('sprava-stranka.component.ts');
+    this.subscription.add(this.roomService.deleteRoom(miestnostId).subscribe(data => {
+      this.refreshRooms();
+      console.log('odstranil som:' + data);
+    }));
   }
 }

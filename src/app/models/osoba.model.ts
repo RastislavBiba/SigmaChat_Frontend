@@ -1,19 +1,16 @@
 export class Osoba {
   id: number;
   login: string;
-//
-  miestnosti?: string;
-  spravy?: string;
-//
+  firstName: string;
+  lastName: string;
+  email: string
 
 
-
-  constructor(osoba: Osoba) {
-    this.id = osoba.id;
-    this.login = osoba.login;
-    this.miestnosti=osoba.miestnosti;
-    this.spravy = osoba.spravy;
-
-
+  constructor(id: number, login: string, firstName: string, lastName: string, email: string) {
+    this.id = id;
+    this.login = login;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
   }
 }

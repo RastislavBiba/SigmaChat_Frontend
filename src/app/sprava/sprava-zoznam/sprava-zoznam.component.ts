@@ -22,7 +22,7 @@ export class SpravaZoznamComponent {
     this.upravSpravu.emit(messageId);
   }
  zmaz(messageId: number): void {
-    console.log('sprava-zoznam.component.ts')
+
     this.zmazSpravu.emit(messageId);
  }
 }

@@ -35,7 +35,7 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
 
 
     odosli(sprava: Sprava): void {
-    console.log("2");
+    console.log("2 odosielam");
       this.messageService.createMessage(sprava).subscribe(data=> {
         console.log('prislo:' + data);
       });
@@ -62,7 +62,6 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
   }
 
   zmazZoZoznamu(messageId: number): void {
-    console.log('sprava-stranka.component.ts');
     this.subscription.add(this.messageService.deleteMessage(messageId).subscribe(data => {
       this.refreshMessages();
       console.log('odstranil som:' + data);

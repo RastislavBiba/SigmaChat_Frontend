@@ -1,19 +1,23 @@
-<h1>Miestnost - formular</h1>
-
+<h1>Vytvorit miestnost</h1>
 <form [formGroup]="formular">
 
-  <label>Nazov Miestnosti:
-    <input formControlName="meno">
-  </label>
-  <br><br>
+  <mat-form-field>
+    <mat-label>
+      Nazov miestnosti:
+    </mat-label>
+    <input matInput formControlName="meno" placeholder="Zadajte nazov...">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>
+      Uzivatel:
+    </mat-label>
+    <input matInput formControlName="osoba" placeholder="Vlozte meno uzivatela...">
+  </mat-form-field>
 
-  <label>Uzivatel:
-    <input formControlName="osoba">
-  </label>
-  <br> <br>
 
-  <button (click)="pridaj()" *ngIf="formular.value.id === null">pridaj</button>
-  <button (click)="uprav()" *ngIf="formular.value.id !== null">uprav</button>
-  <button (click)="zrus()">zrus</button>
+  <button mat-icon-button (click)="pridaj()" *ngIf="formular.value.id === null"><mat-icon>add</mat-icon></button>
+  <button mat-icon-button (click)="uprav()" *ngIf="formular.value.id !== null"><mat-icon>create</mat-icon></button>
+  <button mat-icon-button (click)="zrus()"><mat-icon>cancel</mat-icon></button>
 
 </form>

@@ -1,11 +1,8 @@
 export class Miestnost{
-  id?: string;
+  id: number;
   meno?: string;
-
-//
   osoba?: string;
   spravy?: string;
-//
 
 
   constructor(miestnost: Miestnost) {

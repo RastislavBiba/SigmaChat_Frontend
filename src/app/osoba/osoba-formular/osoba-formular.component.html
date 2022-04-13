@@ -8,7 +8,29 @@
     <input matInput formControlName="login" placeholder="Vlozte login...">
   </mat-form-field>
 
-  <button mat-icon-button (click)="pridaj()" *ngIf="formular.value.id === null"> <mat-icon>add</mat-icon> </button>
- <!-- <button mat-icon-button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-></mat-> </button> -->
+  <mat-form-field>
+    <mat-label>
+      Meno:
+    </mat-label>
+    <input matInput formControlName="firstName" placeholder="Vlozte meno...">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>
+      Priezvisko:
+    </mat-label>
+    <input matInput formControlName="lastName" placeholder="Vlozte priezvisko...">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>
+      Mailova adresa:
+    </mat-label>
+    <input matInput formControlName="email" placeholder="Vlozte mailovu adresu...">
+  </mat-form-field>
+
+  <button mat-icon-button (click)="odosli()" *ngIf="formular.value.id === null"> <mat-icon>add</mat-icon> </button>
+  <button mat-icon-button (click)="uprav()" *ngIf="formular.value.id !== null"> <mat-icon>cancel</mat-icon> </button>
+
 
 </form>

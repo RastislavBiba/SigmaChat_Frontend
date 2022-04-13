@@ -15,9 +15,6 @@ export class MessageServiceService {
   getMessages(): Observable<Sprava[]> {
     return this.http.get<Sprava[]>( `${this.apiUrl}`);
   }
-  getBooks(): Observable<Sprava[]> {
-    return this.http.get<Sprava[]>( `${this.apiUrl}`);
-  }
 
   getMessage(messageId: number): Observable<Sprava> {
     return this.http.get<Sprava>( `${this.apiUrl}/${messageId}`);
@@ -32,7 +29,6 @@ export class MessageServiceService {
   }
 
   deleteMessage(messageId: number): Observable<void> {
-    console.log('sprava-service.ts');
     return this.http.delete<void>( `${this.apiUrl}/${messageId}`);
   }
 

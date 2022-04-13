@@ -12,16 +12,16 @@ export class OsobyZoznamComponent {
   osoby: Osoba[] = [];
 
   @Output()
-  upravOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
+  upravOsobu: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  zmazOsobu: EventEmitter<Osoba> = new EventEmitter<Osoba>();
+  zmazOsobu: EventEmitter<number> = new EventEmitter<number>();
 
-  uprav(osoba: Osoba): void {
-    this.upravOsobu.emit(osoba);
+  uprav(customerId: number): void {
+    this.upravOsobu.emit(customerId);
   }
 
-  zmaz(osoba: Osoba): void {
-    this.zmazOsobu.emit(osoba);
+  zmaz(customerId: number): void {
+    this.zmazOsobu.emit(customerId);
   }
 }

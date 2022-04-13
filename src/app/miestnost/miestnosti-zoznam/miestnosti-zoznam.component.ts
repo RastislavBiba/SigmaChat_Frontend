@@ -12,16 +12,16 @@ export class MiestnostiZoznamComponent {
   miestnosti: Miestnost[] = []
 
   @Output()
-  upravMiestnost: EventEmitter<Miestnost> = new EventEmitter<Miestnost>();
+  upravMiestnost: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  zmazMiestnost: EventEmitter<Miestnost> = new EventEmitter<Miestnost>();
+  zmazMiestnost: EventEmitter<number> = new EventEmitter<number>();
 
-  uprav(miestnost: Miestnost): void {
-    this.upravMiestnost.emit(miestnost);
+  uprav(miestnostId: number): void {
+    this.upravMiestnost.emit(miestnostId);
   }
 
-  zmaz(miestnost: Miestnost): void {
-    this.zmazMiestnost.emit(miestnost);
+  zmaz(miestnostId: number): void {
+    this.zmazMiestnost.emit(miestnostId);
   }
 }

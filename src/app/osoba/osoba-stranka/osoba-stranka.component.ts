@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Osoba} from '../../models/osoba.model';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Subscription} from 'rxjs';
+import {CustomerServiceService} from "../../../osoba-service.service";
 
 
 @Component({
@@ -16,40 +16,49 @@ export class OsobaStrankaComponent implements OnInit {
 
   osobaNaUpravu?: Osoba;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  private subscription: Subscription = new Subscription();
+
+  constructor(private router: Router, private customerService: CustomerServiceService) { }
 
   ngOnInit(): void {
-    console.log('1');
-    const vysledok: Observable<Osoba[]> = this.http.get<Osoba[]>('http://localhost:8080/api/customers');
-    vysledok.subscribe(data => {
-      console.log('prislo:' + data);
-    });
-    console.log('2');
+    this.refreshCustomers();
   }
 
-  chodSpat(): void {
-    this.router.navigate(['']);
+  private refreshCustomers() {
+    this.subscription.add(this.customerService.getCustomers().subscribe(data => {
+      this.osoby=data;
+      console.log('Prislo:',data);
+    }));
   }
 
   pridaj(osoba: Osoba): void {
-    this.osoby.push(osoba);
+    console.log("2 odosielam");
+    this.customerService.createCustomer(osoba).subscribe(data=> {
+      console.log('prislo:' + data);
+    });
   }
 
   uprav(osoba: Osoba): void {
-    const index = this.osoby.findIndex(osobaArray => osobaArray.id === osoba.id);
-    if (index !== -1) {
-      this.osoby[index] = osoba;
+    console.log('idem upravovat');
+    if(osoba.id!==undefined) {
+      this.customerService.updateCustomer(osoba.id, osoba).subscribe(data => {
+        console.log('upravilo:' + data);
+      });
     }
   }
 
-  upravZoZoznamu(osoba: Osoba): void {
-    this.osobaNaUpravu = osoba;
+  upravZoZoznamu(customerId: number): void {
+    this.customerService.getCustomer(customerId).subscribe(data => {
+      console.log('prislo: ' , data);
+    });
   }
 
-  zmazZoZoznamu(osoba: Osoba): void {
-    const index = this.osoby.findIndex(osobaArray => osobaArray.id === osoba.id);
-    if (index !== -1) {
-      this.osoby.splice(index, 1);
-    }
+  zmazZoZoznamu(customerId: number): void {
+    this.subscription.add(this.customerService.deleteCustomer(customerId).subscribe(data => {
+      this.refreshCustomers();
+      console.log('odstranil som:' + data);
+    }));
   }
+
+
 }

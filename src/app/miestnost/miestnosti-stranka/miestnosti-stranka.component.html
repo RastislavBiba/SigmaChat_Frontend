@@ -1,25 +1,26 @@
+<header>
+  <app-menu>
+  </app-menu>
+</header>
 
-<app-menu></app-menu>
 <h1 class=" d-flex justify-content-center ">Miestnosti</h1>
+<div class="container-xxl h-75">
+  <div class="row h-100">
+    <div class="col">
+        <app-miestnosti-formular [miestnosti]="miestnostNaUpravu"
+                                 (pridajMiestnost)="pridaj($event)"
+                                 (upravMiestnost)="uprav($event)" >
+        </app-miestnosti-formular>
+    </div>
+    <div class="col-9 overflow-auto h-75">
+      <app-miestnost-zoznam [miestnosti]="miestnosti"
+                            (upravMiestnost)="upravZoZoznamu($event)"
+                            (zmazMiestnost)="zmazZoZoznamu($event)">
+      </app-miestnost-zoznam>
+    </div>
 
-<app-miestnosti-formular [miestnosti]="miestnostNaUpravu"
-                    (pridajMiestnost)="pridaj($event)"
-                    (upravMiestnost)="uprav($event)" >
-</app-miestnosti-formular>
-
-
-<!--
-<app-miestnosti-zoznam [miestnosti]="miestnosti"
-                       (upravMiestnost)="uprav($event)"
-                       (zmazMiestnost)="zmazZoZoznamu($event)">
-</app-miestnosti-zoznam>
--->
-
-
-<br>
-
-<div>
-  <button (click)="chodSpat()">SPÄŤ</button>
+  </div>
 </div>
+
 
 
