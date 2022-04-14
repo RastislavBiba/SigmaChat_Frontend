@@ -4,16 +4,13 @@ import {Osoba} from '../../models/osoba.model';
 import {Subscription} from 'rxjs';
 import {CustomerServiceService} from "../../../osoba-service.service";
 
-
 @Component({
   selector: 'app-osoba-stranka',
   templateUrl: 'osoba-stranka.component.html',
   styleUrls: ['osoba-stranka.component.css']
 })
 export class OsobaStrankaComponent implements OnInit {
-
   osoby: Osoba[] = [];
-
   osobaNaUpravu?: Osoba;
 
   private subscription: Subscription = new Subscription();

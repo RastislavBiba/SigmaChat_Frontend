@@ -6,18 +6,10 @@
 <div class="row">
   <div class="col-5">
     <table class="table" *ngIf="miestnosti.length > 0">
-      <thead>
-      <tr>
-        <th>Meno</th>
-        <th>Uzivatelia</th>
-        <th></th>
-      </tr>
-      </thead>
 
       <tbody>
       <tr *ngFor="let miestnost of miestnosti">
-        <td>{{ miestnost.meno }}</td>
-        <td>{{ miestnost.osoba }}</td>
+        <td>{{ miestnost.name }}</td>
 <!--
         <td>
           <button (click)="uprav(miestnost.id)">Upraviť</button>

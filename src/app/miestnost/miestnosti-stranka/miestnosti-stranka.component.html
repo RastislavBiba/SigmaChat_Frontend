@@ -3,22 +3,21 @@
   </app-menu>
 </header>
 
-<h1 class=" d-flex justify-content-center ">Miestnosti</h1>
 <div class="container-xxl h-75">
   <div class="row h-100">
-    <div class="col">
+    <div class="col overflow-auto h-100">
         <app-miestnosti-formular [miestnosti]="miestnostNaUpravu"
                                  (pridajMiestnost)="pridaj($event)"
                                  (upravMiestnost)="uprav($event)" >
         </app-miestnosti-formular>
     </div>
-    <div class="col-9 overflow-auto h-75">
+    <div class="col-8">
+      <div class="text_input"></div>
       <app-miestnost-zoznam [miestnosti]="miestnosti"
                             (upravMiestnost)="upravZoZoznamu($event)"
                             (zmazMiestnost)="zmazZoZoznamu($event)">
       </app-miestnost-zoznam>
     </div>
-
   </div>
 </div>
 

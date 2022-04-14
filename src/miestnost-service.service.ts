@@ -9,7 +9,7 @@ import {Miestnost} from "./app/models/miestnost.model";
 })
 export class RoomServiceService {
 
-  private apiUrl = 'http://localhost:8080/api/borrowings';
+  private apiUrl = 'http://localhost:8080/api/rooms';
 
   constructor(private http: HttpClient) { }
 

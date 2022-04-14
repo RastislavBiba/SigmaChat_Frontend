@@ -15,6 +15,9 @@ export class OsobyZoznamComponent {
   upravOsobu: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
+  posliSpravu: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
   zmazOsobu: EventEmitter<number> = new EventEmitter<number>();
 
   uprav(customerId: number): void {
@@ -23,5 +26,9 @@ export class OsobyZoznamComponent {
 
   zmaz(customerId: number): void {
     this.zmazOsobu.emit(customerId);
+  }
+
+  posli(customerId: number): void {
+    this.posliSpravu.emit(customerId);
   }
 }

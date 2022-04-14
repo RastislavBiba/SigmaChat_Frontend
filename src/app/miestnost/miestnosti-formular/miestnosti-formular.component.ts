@@ -26,16 +26,17 @@ export class MiestnostiFormularComponent {
   constructor() {
     this.formular = new FormGroup({
       id: new FormControl(null),
-      meno: new FormControl(null),
-      osoba: new FormControl(null)
+      name: new FormControl(null),
+
     });
   }
-  public pridaj(): void {
+  public odosli(): void {
     console.log("Odosielam");
     this.pridajMiestnost.emit({
       id: Math.random(),
-      meno: this.formular.value.meno,
-      osoba: this.formular.value.osoba
+      name: this.formular.value.name,
+      user: this.formular.value.user,
+      messages: this.formular.value.messages,
       });
     this.formular.reset();
   }
@@ -54,8 +55,9 @@ export class MiestnostiFormularComponent {
   }
   private naplnForm(miestnost: Miestnost): void {
     this.formular.controls['id'].setValue(miestnost.id);
-    this.formular.controls['meno'].setValue(miestnost.meno);
-    this.formular.controls['user'].setValue(miestnost.osoba);
+    this.formular.controls['name'].setValue(miestnost.name);
+    this.formular.controls['user'].setValue(miestnost.user);
+    this.formular.controls['messages'].setValue(miestnost.messages);
   }
 
 

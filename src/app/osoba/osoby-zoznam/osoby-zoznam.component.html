@@ -6,26 +6,14 @@
 
 
 <table class="table" *ngIf="osoby.length > 0">
-  <thead>
-  <tr>
-    <th>Login</th>
-    <th>Meno</th>
-    <th>Priezvisko</th>
-    <th>Email</th>
-    <th></th>
-  </tr>
-  </thead>
+
   <tbody>
   <tr *ngFor="let osoba of osoby">
     <td>{{ osoba.login }}</td>
-    <td>{{ osoba.firstName }}</td>
-    <td>{{ osoba.lastName }}</td>
-    <td>{{ osoba.email }}</td>
     <td></td>
-   <!-- <td>
-      <button mat-icon-button (click)="uprav(osoba.id)"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button (click)="zmaz(osoba.id)"><mat-icon>delete</mat-icon></button>
-    </td>-->
+    <td>
+      <button mat-icon-button (click)="posli(osoba.id)"><mat-icon>message</mat-icon></button>
+    </td>
   </tr>
   </tbody>
 </table>

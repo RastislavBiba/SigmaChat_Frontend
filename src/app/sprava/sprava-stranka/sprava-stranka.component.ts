@@ -3,6 +3,8 @@ import {Sprava} from "../../models/sprava.model";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {MessageServiceService} from "../../../sprava-service.service";
+import {RoomServiceService} from "../../../miestnost-service.service";
+import {Miestnost} from "../../models/miestnost.model";
 
 @Component({
   selector: 'app-sprava-stranka',
@@ -10,13 +12,13 @@ import {MessageServiceService} from "../../../sprava-service.service";
   styleUrls: ['sprava-stranka.component.css']
 })
 export class SpravaStrankaComponent implements OnInit, OnDestroy{
-
+  miestnosti: Miestnost[] = [];
   messages: Sprava[] = [];
   spravaNaUpravu?: Sprava;
 
   private subscription: Subscription = new Subscription();
 
-  constructor(private router: Router, private messageService: MessageServiceService){}
+  constructor(private router: Router, private messageService: MessageServiceService, private roomService: RoomServiceService){}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -24,6 +26,7 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.refreshMessages();
+    this.refreshRooms();
   }
 
   refreshMessages(): void {
@@ -33,6 +36,11 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
     }));
   }
 
+  refreshRooms(): void {
+    this.subscription.add(this.roomService.getRooms().subscribe(data => {
+      this.miestnosti = data;
+    }));
+  }
 
     odosli(sprava: Sprava): void {
     console.log("2 odosielam");

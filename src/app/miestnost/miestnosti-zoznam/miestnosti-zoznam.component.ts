@@ -17,11 +17,12 @@ export class MiestnostiZoznamComponent {
   @Output()
   zmazMiestnost: EventEmitter<number> = new EventEmitter<number>();
 
-  uprav(miestnostId: number): void {
-    this.upravMiestnost.emit(miestnostId);
+  uprav(roomId: number): void {
+    this.upravMiestnost.emit(roomId);
   }
 
-  zmaz(miestnostId: number): void {
-    this.zmazMiestnost.emit(miestnostId);
+  zmaz(roomId: number): void {
+    this.zmazMiestnost.emit(roomId);
   }
+
 }

@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Osoba} from "../../models/osoba.model";
 import {FormControl, FormGroup} from "@angular/forms";
-
 @Component({
   selector: 'app-osoba-formular',
   templateUrl: 'osoba-formular.component.html',
@@ -16,12 +15,10 @@ export class OsobaFormularComponent {
       this.naplnForm(o)
     }
   }
-
   @Output()
   pridajOsobu = new EventEmitter<Osoba>();
   @Output()
   upravOsobu = new EventEmitter<Osoba>();
-
   @Output()
   odstranOsobu = new EventEmitter<Osoba>();
 

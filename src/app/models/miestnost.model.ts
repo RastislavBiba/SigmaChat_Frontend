@@ -1,16 +1,14 @@
 export class Miestnost{
   id: number;
-  meno?: string;
-  osoba?: string;
-  spravy?: string;
+  name: string;
+  user: string;
+  messages: string;
 
 
-  constructor(miestnost: Miestnost) {
-    this.id = miestnost.id;
-    this.meno = miestnost.meno;
-    this.osoba = miestnost.osoba;
-    this.spravy = miestnost.spravy;
-
-
+  constructor(id: number, name: string, user: string, messages: string) {
+    this.id = id;
+    this.name = name;
+    this.user = user;
+    this.messages = messages;
   }
 }
