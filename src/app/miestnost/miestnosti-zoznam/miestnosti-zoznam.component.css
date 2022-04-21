@@ -1,0 +1,8 @@
+.nadpis{
+  font-size: large;
+  align-items: center;
+  vertical-align: center;
+}
+.button:hover{
+  background-color: ghostwhite;
+}

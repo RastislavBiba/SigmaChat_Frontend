@@ -2,16 +2,14 @@ export class Sprava {
 
   id: number;
   text: string;
-  odosielatel: string;
-  prijimatel: string
-  id_miestnost: number;
+  id_odosielatel: string;
+  prijemca: number;
 
 
-  constructor(id: number, text: string, odosielatel: string, prijimatel: string, id_miestnost: number) {
+  constructor(id: number, text: string, id_odosielatel: string, prijemca: number) {
     this.id = id;
     this.text = text;
-    this.odosielatel = odosielatel;
-    this.prijimatel = prijimatel;
-    this.id_miestnost = id_miestnost;
+    this.id_odosielatel = id_odosielatel;
+    this.prijemca = prijemca;
   }
 }

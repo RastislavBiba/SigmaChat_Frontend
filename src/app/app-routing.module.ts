@@ -19,13 +19,15 @@ const routes: Routes = [
     component: MiestnostiStrankaComponent,
   },
   {
-    path: '',
-    component: SpravaStrankaComponent,
-  },
-  {
     path: 'menu',
     component: MenuComponent,
   },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: SpravaStrankaComponent,
+  },
+
 ]
 
 @NgModule({

@@ -26,7 +26,7 @@ export class MiestnostiStrankaComponent implements OnInit, OnDestroy{
   refreshRooms(): void {
     this.subscription.add(this.roomService.getRooms().subscribe(data => {
       this.miestnosti = data;
-      console.log('Prislo:', data);
+      console.log('Prislo miestnost:', data);
     }));
   }
 

@@ -5,19 +5,21 @@
 
 <div class="container-xxl h-75">
 <div class="row h-100">
-  <div class="col">
-  <app-miestnost-zoznam [miestnosti]="miestnosti">
+  <div class="col overflow-auto h-100 room-clickable">
+  <app-miestnost-zoznam [miestnosti]="miestnosti"
+                        (nastavMiestnost)="nastavMiestnostAkoPrijemcu($event)">
 
   </app-miestnost-zoznam>
 </div>
 <main class="col-9 overflow-auto h-75">
-<app-sprava-zoznam [messages]="messages"
-                  (upravSpravu)="upravZoZoznamu($event)"
-                  (zmazSpravu)="zmazZoZoznamu($event)">
+<app-sprava-zoznam [messages]="filterMessage"
+                   (upravSpravu)="upravZoZoznamu($event)"
+                   (zmazSpravu)="zmazZoZoznamu($event)">
 </app-sprava-zoznam>
 <br>
   <div class="text_input">
     <app-sprava-formular [sprava]="spravaNaUpravu"
+                         [prijemca]="miestnostAkoPrijemca"
                      (pridajSpravu)="odosli($event)"
                      (upravSpravu)="uprav($event)" >
     </app-sprava-formular>

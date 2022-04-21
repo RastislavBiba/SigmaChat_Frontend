@@ -17,6 +17,13 @@ export class SpravaFormularComponent {
     }
   }
 
+  @Input()
+  set prijemca(roomId: number | undefined) {
+    if (roomId !== undefined) {
+      this.formular.controls['prijemca'].setValue(roomId);
+    }
+  }
+
   @Output()
   pridajSpravu = new EventEmitter<Sprava>();
 
@@ -32,14 +39,13 @@ export class SpravaFormularComponent {
     this.formular = new FormGroup({
       id: new FormControl(null),
       text_spravy: new FormControl(null),
-      odosielatel: new FormControl("Rasto"),
-      prijimatel: new FormControl(null),
-      id_miestnost: new FormControl(null)
+      id_odosielatel: new FormControl(13),
+      prijemca: new FormControl(null),
     });
   }
   public odosli(): void {
     console.log("Odosielam");
-    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, odosielatel: this.formular.value.odosielatel, prijimatel: this.formular.value.prijimatel, id_miestnost: this.formular.value.id_miestnost});
+    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, id_odosielatel: this.formular.value.id_odosielatel, prijemca: this.formular.value.prijemca});
     this.formular.reset();
 
   }
@@ -60,7 +66,7 @@ export class SpravaFormularComponent {
 
     this.formular.controls['id'].setValue(sprava.id);
     this.formular.controls['text_spravy'].setValue(sprava.text);
-    this.formular.controls['odosielatel'].setValue(sprava.odosielatel);
-    this.formular.controls['prijimatel'].setValue(sprava.prijimatel);
+    this.formular.controls['id_odosielatel'].setValue(sprava.id_odosielatel);
+    this.formular.controls['prijemca'].setValue(sprava.prijemca);
   }
 }

@@ -4,12 +4,19 @@
   Zoznam miestnosti je prázdny.
 </div>
 <div class="row">
-  <div class="col-5">
-    <table class="table" *ngIf="miestnosti.length > 0">
+  <div>
+    <table class="table nadpis" *ngIf="miestnosti.length > 0">
 
       <tbody>
-      <tr *ngFor="let miestnost of miestnosti">
-        <td>{{ miestnost.name }}</td>
+      <tr *ngFor="let miestnost of miestnosti" class="button">
+        <td>
+          <ngx-avatar name={{miestnost.name}}></ngx-avatar>
+        </td>
+        <td (click)="nastav(miestnost.id)">
+          <div>{{ miestnost.name }}</div>
+          <div style="font-size: smaller; color: darkgray">{{ najdiPoslednuSpravu(miestnost.id) }}</div>
+
+        </td>
 <!--
         <td>
           <button (click)="uprav(miestnost.id)">Upraviť</button>

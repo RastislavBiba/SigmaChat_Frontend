@@ -35,8 +35,7 @@ export class MiestnostiFormularComponent {
     this.pridajMiestnost.emit({
       id: Math.random(),
       name: this.formular.value.name,
-      user: this.formular.value.user,
-      messages: this.formular.value.messages,
+      user_id: this.formular.value.user_id,
       });
     this.formular.reset();
   }
@@ -56,8 +55,7 @@ export class MiestnostiFormularComponent {
   private naplnForm(miestnost: Miestnost): void {
     this.formular.controls['id'].setValue(miestnost.id);
     this.formular.controls['name'].setValue(miestnost.name);
-    this.formular.controls['user'].setValue(miestnost.user);
-    this.formular.controls['messages'].setValue(miestnost.messages);
+    this.formular.controls['user'].setValue(miestnost.user_id);
   }
 
 

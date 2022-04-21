@@ -23,7 +23,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
-
+import {AvatarModule } from 'ngx-avatar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +52,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
         MatInputModule,
         MatTabsModule,
         MatToolbarModule,
-        MatSidenavModule
+        MatSidenavModule,
+        AvatarModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

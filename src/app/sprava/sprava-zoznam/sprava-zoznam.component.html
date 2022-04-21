@@ -4,6 +4,7 @@
 </div>
 
 <div class="row">
+
   <div class="col-5">
     <table class="table" *ngIf="messages.length > 0">
       <!--<thead>
@@ -15,13 +16,12 @@
       </tr>
       </thead>-->
       <tbody>
-      <tr *ngFor="let message of messages">
-        <td *ngIf="message.prijimatel == 'Niko' ">{{ message.odosielatel }}</td>
-        <!-- <td>{{ message.prijimatel}}</td> -->
-        <td *ngIf="message.prijimatel == 'Niko' ">{{ message.text }}</td>
-        <!--
-        <td>{{ message.id }}</td>
-        <td>
+      <tr *ngFor="let message of messages" >
+        <td><ngx-avatar value={{message.prijemca}}></ngx-avatar>  </td>
+        <td>{{message.prijemca}}</td>
+        <td>{{ message.text}}</td>
+
+        <!--<td>
           <button (click)="uprav(message.id)">Upraviť</button>
           <button (click)="zmaz(message.id)">Zmazať</button>
         </td>

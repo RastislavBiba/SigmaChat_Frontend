@@ -15,6 +15,8 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
   miestnosti: Miestnost[] = [];
   messages: Sprava[] = [];
   spravaNaUpravu?: Sprava;
+  miestnostAkoPrijemca?: number;
+  filterMessage: Sprava[] = [];
 
   private subscription: Subscription = new Subscription();
 
@@ -31,10 +33,14 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
 
   refreshMessages(): void {
     this.subscription.add(this.messageService.getMessages().subscribe(data => {
-      console.log('Prislo:',data);
+      console.log('Prisli spravy:',data);
       this.messages=data;
+      this.filterMessage=this.messages.filter(sprava => this.spravaNaUpravu?.prijemca === this.miestnostAkoPrijemca);
+      console.log('Prijemca:' ,this.spravaNaUpravu?.prijemca);
+      console.log('filter message:' ,this.filterMessage);
     }));
   }
+
 
   refreshRooms(): void {
     this.subscription.add(this.roomService.getRooms().subscribe(data => {
@@ -49,6 +55,10 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
       });
 
     }
+
+  nastavMiestnostAkoPrijemcu(roomId: number): void {
+    this.miestnostAkoPrijemca = roomId;
+  }
 
   chodSpat(): void {
     this.router.navigate(['']);
