@@ -5,27 +5,14 @@
 
 <div class="row">
 
-  <div class="col-5">
+  <div>
     <table class="table" *ngIf="messages.length > 0">
-      <!--<thead>
-      <tr>
-        <th>Odosielatel</th>
-         <th>Prijimatel</th>
-        <th>Text spravy</th>
-        <th>Id spravy</th>
-      </tr>
-      </thead>-->
+
       <tbody>
       <tr *ngFor="let message of messages" >
         <td><ngx-avatar value={{message.prijemca}}></ngx-avatar>  </td>
         <td>{{message.prijemca}}</td>
         <td>{{ message.text}}</td>
-
-        <!--<td>
-          <button (click)="uprav(message.id)">Upraviť</button>
-          <button (click)="zmaz(message.id)">Zmazať</button>
-        </td>
-        -->
       </tr>
       </tbody>
     </table>

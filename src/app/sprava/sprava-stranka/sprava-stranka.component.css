@@ -1,6 +1,5 @@
 .text_input{
   position: absolute;
-  width: 65%;
   bottom: 10%;
 }
 .main{
@@ -8,4 +7,5 @@
 }
 .room-clickable:hover {
   cursor: pointer;
+
 }

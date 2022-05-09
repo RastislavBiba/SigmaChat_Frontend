@@ -12,13 +12,13 @@
 
   </app-miestnost-zoznam>
 </div>
-<main class="col-9 overflow-auto h-75">
+<main class="col-11 col-sm-7 overflow-auto h-75">
 <app-sprava-zoznam [messages]="messages"
                    (upravSpravu)="upravZoZoznamu($event)"
                    (zmazSpravu)="zmazZoZoznamu($event)">
 </app-sprava-zoznam>
 <br>
-  <div class="text_input">
+  <div class="col-7 text_input">
     <app-sprava-formular [sprava]="spravaNaUpravu"
                          [prijemca]="miestnostAkoPrijemca"
                      (pridajSpravu)="odosli($event)"

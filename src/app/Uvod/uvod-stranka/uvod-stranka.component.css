@@ -1,7 +1,17 @@
-.background {
+body,
+html {
   height: 100%;
+}
+
+.bg {
+  /* The image used */
   background-image: url("images/SigmaMale.png");
-  background-color: #cccccc;
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .login{
   position: absolute;
@@ -12,11 +22,4 @@
   width: 20%
 ;
 }
-.welcome{
-  position: absolute;
-  left: 85%;
-  margin-left: 20px;
-  top: 20%;
-  padding-left: 20px;
-  width: 20%
-}
+
