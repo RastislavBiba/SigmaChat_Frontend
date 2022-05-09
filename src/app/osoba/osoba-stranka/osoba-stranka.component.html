@@ -5,18 +5,21 @@
 
 <div class="container-xxl h-75">
   <div class="row h-100">
+    <div class="col-3">
+      <div class="text_input"></div>
+      <app-osoba-formular [osoba]="osobaNaUpravu"
+                          (pridajOsobu)="pridaj($event)"
+                          (upravOsobu)="uprav($event)" >
+      </app-osoba-formular>
+    </div>
     <div class="col overflow-auto h-100">
       <app-osoby-zoznam [osoby]="osoby"
                         (upravOsobu)="upravZoZoznamu($event)"
                         (zmazOsobu)="zmazZoZoznamu($event)">
       </app-osoby-zoznam>
     </div>
-    <div class="col-8">
-      <div class="text_input"></div>
-      <app-osoba-formular [osoba]="osobaNaUpravu"
-                          (pridajOsobu)="pridaj($event)"
-                          (upravOsobu)="uprav($event)" >
-      </app-osoba-formular>
+    <div class="col-5">
+
     </div>
   </div>
 </div>

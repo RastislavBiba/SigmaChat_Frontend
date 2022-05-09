@@ -24,6 +24,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {AvatarModule } from 'ngx-avatar';
+import { UvodStrankaComponent } from './Uvod/uvod-stranka/uvod-stranka.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import {AvatarModule } from 'ngx-avatar';
     MiestnostiZoznamComponent,
     MiestnostiStrankaComponent,
     SpravaZoznamComponent,
-    MenuComponent
+    MenuComponent,
+    UvodStrankaComponent
   ],
     imports: [
         BrowserModule,

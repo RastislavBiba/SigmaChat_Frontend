@@ -1,12 +1,14 @@
+import {Osoba} from "./osoba.model";
+
 export class Miestnost{
   id: number;
   name: string;
-  user_id: number;
+  idUser: Osoba [];
 
 
-  constructor(id: number, name: string, user_id: number) {
+  constructor(id: number, name: string, idUser: Osoba[]) {
     this.id = id;
     this.name = name;
-    this.user_id = user_id;
+    this.idUser = idUser;
   }
 }

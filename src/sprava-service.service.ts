@@ -16,6 +16,10 @@ export class MessageServiceService {
     return this.http.get<Sprava[]>( `${this.apiUrl}`);
   }
 
+  getRoomMessages(prijemca: number): Observable<void> {
+    return this.http.get<void>(`${this.apiUrl}/${prijemca}`)
+  }
+
   getMessage(messageId: number): Observable<Sprava> {
     return this.http.get<Sprava>( `${this.apiUrl}/${messageId}`);
   }

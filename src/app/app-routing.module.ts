@@ -4,6 +4,7 @@ import {MiestnostiStrankaComponent} from "./miestnost/miestnosti-stranka/miestno
 import {NgModule} from "@angular/core";
 import {SpravaStrankaComponent} from "./sprava/sprava-stranka/sprava-stranka.component";
 import {MenuComponent} from "./menu/menu.component";
+import {UvodStrankaComponent} from "./Uvod/uvod-stranka/uvod-stranka.component";
 
 const routes: Routes = [
   {
@@ -23,9 +24,8 @@ const routes: Routes = [
     component: MenuComponent,
   },
   {
-    path: '**',
-    pathMatch: 'full',
-    component: SpravaStrankaComponent,
+    path: '',
+    component: UvodStrankaComponent,
   },
 
 ]

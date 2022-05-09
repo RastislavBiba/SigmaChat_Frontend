@@ -16,7 +16,6 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
   messages: Sprava[] = [];
   spravaNaUpravu?: Sprava;
   miestnostAkoPrijemca?: number;
-  filterMessage: Sprava[] = [];
 
   private subscription: Subscription = new Subscription();
 
@@ -34,10 +33,10 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
   refreshMessages(): void {
     this.subscription.add(this.messageService.getMessages().subscribe(data => {
       console.log('Prisli spravy:',data);
+      const filteredMessages: Array<Sprava> = this.messages.filter(message => message.prijemca === this.miestnostAkoPrijemca);
       this.messages=data;
-      this.filterMessage=this.messages.filter(sprava => this.spravaNaUpravu?.prijemca === this.miestnostAkoPrijemca);
       console.log('Prijemca:' ,this.spravaNaUpravu?.prijemca);
-      console.log('filter message:' ,this.filterMessage);
+      console.log('filter message:' ,filteredMessages);
     }));
   }
 

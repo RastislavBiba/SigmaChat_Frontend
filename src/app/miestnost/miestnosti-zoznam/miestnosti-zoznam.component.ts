@@ -38,12 +38,11 @@ export class MiestnostiZoznamComponent {
     this.nastavMiestnost.emit(roomId);
   }
   najdiPoslednuSpravu(roomId: number): string {
-    console.log('roomId: ', roomId);
-    const poslednaSprava = this.messages.find(message => message.prijemca === roomId)?.text;
-    console.log('posledna sprava: ', poslednaSprava);
-    if (poslednaSprava === undefined){
+      console.log('roomId: ', roomId);
+      const filteredMessages: Array<Sprava> = this.messages.filter(message => message.prijemca === roomId);
+      if (filteredMessages?.length > 0) {
+        return filteredMessages[filteredMessages.length - 1]?.text;
+      }
       return "Nemate ziadne spravy";
     }
-    return (poslednaSprava);
-  }
 }
