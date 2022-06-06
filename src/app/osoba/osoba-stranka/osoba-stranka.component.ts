@@ -33,6 +33,7 @@ export class OsobaStrankaComponent implements OnInit {
     this.customerService.createCustomer(osoba).subscribe(data=> {
       console.log('prislo:' + data);
     });
+    window.location.reload();
   }
 
   uprav(osoba: Osoba): void {

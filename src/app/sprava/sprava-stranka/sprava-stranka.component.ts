@@ -38,6 +38,7 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
       console.log('Prijemca:' ,this.spravaNaUpravu?.prijemca);
       console.log('filter message:' ,filteredMessages);
     }));
+
   }
 
 
@@ -52,7 +53,7 @@ export class SpravaStrankaComponent implements OnInit, OnDestroy{
       this.messageService.createMessage(sprava).subscribe(data=> {
         console.log('prislo:' + data);
       });
-
+      window.location.reload();
     }
 
   nastavMiestnostAkoPrijemcu(roomId: number): void {

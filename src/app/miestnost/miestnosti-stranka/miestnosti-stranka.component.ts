@@ -35,6 +35,7 @@ export class MiestnostiStrankaComponent implements OnInit, OnDestroy{
     this.roomService.createRoom(miestnost).subscribe(data=> {
       console.log('prislo:' + data);
     });
+    window.location.reload();
   }
 
   uprav(miestnost: Miestnost): void {

@@ -2,22 +2,22 @@
   <span> SigmaChat </span>
 </mat-toolbar>
 <div class="bg">
-  <!-- <div class="login">
-   <mat-form-field class="text" appearance="fill">
-     <mat-label>
-       Your name:
-     </mat-label>
-     <input matInput formControlName="meno" placeholder="Input your nickname...">
-   </mat-form-field>
-     mat
-   <button (click)="odosli" > enter</button>
-   </div>-->
+
   <div class="row">
     <div class=" col-sm-3 col-lg-8"></div>
     <div class=" col">
       <br><br><br>
-      <div class=""></div>
-      <button mat-stroked-button (click)="odosli()" style="color: #cccccc"> Enter into Sigmas!</button>
+      <div></div>
+      <div class="login">
+        <mat-form-field class="text" appearance="fill">
+          <mat-label>
+            Your name:
+          </mat-label>
+          <input matInput type="text" name="id_odosielatel" placeholder="Input your id..." [(ngModel)]="_id_odosielatel" (ngModelChange)="odosli($event)">
+        </mat-form-field>
+        <button mat-stroked-button (click)="prejdi()" style="color: #cccccc" > Enter into Sigmas!</button>
+      </div>
     </div>
   </div>
 </div>
+

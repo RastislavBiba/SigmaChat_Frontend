@@ -39,13 +39,13 @@ export class SpravaFormularComponent {
     this.formular = new FormGroup({
       id: new FormControl(null),
       text_spravy: new FormControl(null),
-      id_odosielatel: new FormControl(13),
+      id_odosielatel: new FormControl(sessionStorage.getItem('id_odosielatel')),
       prijemca: new FormControl(null),
     });
   }
   public odosli(): void {
     console.log("Odosielam");
-    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, id_odosielatel: this.formular.value.id_odosielatel, prijemca: this.formular.value.prijemca});
+    this.pridajSpravu.emit({id: Math.random(),text: this.formular.value.text_spravy, id_odosielatel: sessionStorage.getItem('id_odosielatel'), prijemca: this.formular.value.prijemca});
     this.formular.reset();
 
   }
